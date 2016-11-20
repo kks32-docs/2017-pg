@@ -2,7 +2,7 @@
 > Krishna Kumar, Kenichi Soga, Jean-Yves Delenne and Farhang Radjai
 
 [![Build Status](https://api.travis-ci.org/kks32-docs/2017-pg.svg)](https://travis-ci.org/kks32-docs/2017-pg)
-[![License CC-By-NC-4.0](http://img.shields.io/badge/license-CC-By-NC-4.0-brightgreen.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+[![License CC-By-NC-4.0](https://img.shields.io/badge/license-CC--By--NC--4.0-brightgreen.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 
 ## Abstract  
