@@ -1,0 +1,126 @@
+%%%%%%%%%%%%%%%%%%%%%%% file template.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is a template file for Web of Conferences Journal
+%
+% Copy it to a new file with a new name and use it as the basis
+% for your article
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%% EDP Science %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%\documentclass[option comma separated list]{webofc}
+%%%Three important options:
+%%% "epj" for EPJ Web of Conferences Journal
+%%% "bio" for BIO Web of Conferences Journal
+%%% "mat" for MATEC Web of Conferences Journal
+%%% "itm" for ITM Web of Conferences Journal
+%%% "e3s" for E3S Web of Conferences Journal
+%%% "shs" for SHS Web of Conferences Journal
+%%% "twocolumn" for typesetting an article in two columns format (default one column)
+\documentclass[epj,twocolumn]{webofc}
+\usepackage[varg]{txfonts}   % Web of Conferences font
+%
+% Put here some packages required or/and some personnal commands
+%
+% Important: please activate and fill the "wocname" command with the exact title of the series for conferences not included in any of the series listed on the top
+%
+%\wocname{?????????}
+%
+% Very important: please fill the "woctitle" command with the exact title of the conference
+%
+\woctitle{Powders \& Grains 2017}
+%
+%
+\begin{document}
+%
+\title{Collapse of tall granular columns in fluid}
+%
+% subtitle is optionnal
+%
+%%%\subtitle{Do you have a subtitle?\\ If so, write it here}
+
+\author{\firstname{Krishna} \lastname{Kumar}\inst{1}\fnsep\thanks{\email{kks32@cam.ac.uk}} \and
+        \firstname{Kenichi} \lastname{Soga}\inst{2}\fnsep\thanks{\email{soga@berkeley.edu}} \and
+        \firstname{Jean-Yves} \lastname{Delenne}\inst{3}\fnsep\thanks{\email{}} \and
+        \firstname{Farhang} \lastname{Radjai}\inst{4}\fnsep\thanks{\email{}}
+        % etc.
+}
+
+\institute{Department of Engineering, University of Cambridge, UK 
+\and
+           University of California, Berkeley, US
+\and
+           INRA, France
+\and 
+           CNRS, France
+          }
+
+\abstract{%
+  Avalanches, landslides, and debris flows are geophysical hazards, which involve rapid mass movement
+  of granular solids, water, and air as a single phase system. In order to describe the mechanism of
+  immersed granular flows, it is important to consider both the dynamics of the solid phase and the
+  role of the ambient fluid (Denlinger and Iverson, 2001). The dynamics of the solid phase alone are
+  insufficient to describe the mechanism of granular flows in fluid. It is important to consider the
+  effect of hydrodynamic forces that reduce the weight of the solids inducing a transition from
+  dense-compacted to dense-suspended flows, and the drag interactions which counteract the movement
+  of the solids (Meruane et al., 2010). Transient regimes characterised by a change in the solid
+  fraction, dilation at the onset of flow and the development of excess pore-pressure, result in
+  altering the balance between the stress carried by the fluid and that carried by the grains, thereby
+  changing the overall behaviour of the flow. In the present study, a two-dimensional coupled Lattice
+  Boltzmann LBM – DEM technique is developed to understand the micro-scale rheology of granular
+  flows in fluid.
+
+  In the present study, the collapse of a granular column in fluid is studied using 2D LBM - DEM.
+  The effect of initial aspect ratio on the run-out behaviour is investigated. The flow kinematics are
+  compared with the dry and buoyant granular collapse to understand the influence of hydrodynamic forces
+  and lubrication on the run-out. In the case of tall columns, the amount of material destabilised above
+  the failure plane is larger than that of short columns. Hence in tall columns, the surface area of the
+  mobilised mass that interacts with the surrounding fluid is significantly higher than the short columns.
+  This increase in the area of soil - fluid interaction results in an increase in the formation of
+  turbulent vortices that alter the deposit morphology during the collapse. It is observed that the
+  vortices result in formation of heaps that significantly affect the distribution of mass in the flow.
+  Staron and Hinch (2007) observed that the distribution of mass in a granular flow plays a crucial role
+  in the flow kinematics. In order to understand the behaviour of tall columns, the run-out behaviour of a
+  dense granular column with an initial aspect ratio of 6 is studied. The collapse of a tall granular
+  column on slopes of 0, 2.5, 5 and 7.5 are studied. The permeability of the granular mass was varied
+  to understand the effect of permeability on the run-out behaviour. }
+%
+\maketitle
+%
+\section{Introduction}
+The collapse of a granular column on a horizontal surface is a simple case of granular flow, however a
+proper model that describes the flow dynamics is still lacking. Experimental investigations have shown that
+the flow duration, the spreading velocity, the final extent of the deposit, and the energy dissipation can be scaled in a quantitative way independent of substrate properties, grain size, density, and shape of the granular
+material and released mass (Lajeunesse, Monnier, \& Homsy, 2005; Lube, Huppert, Sparks, \& Freundt, 2005).
+Simple mathematical models based on conservation of horizontal momentum capture the scaling laws of the
+final deposit, but fail to describe the initial transition regime. Granular flow is modelled as a frictional
+dissipation process in continuum mechanics but the lack of influence of inter-particle friction on the energy
+dissipation and spreading dynamics (Lube et al., 2005) is surprising.
+
+\section*{Acknowledgements and References}
+Acknowledgements and Reference heading should be left justified, bold, with the first letter capitalized but have no numbers. Text below continues as normal.
+
+Online references will be linked to their original source, only if possible. To enable this linking extra care should be taken when preparing reference lists. References should be cited in the text by using \cite{RefJ}. A complete reference should provide enough information to locate the article. 
+
+%
+% BibTeX or Biber users please use (the style is already called in the class, ensure 
+% that the "woc.bst" style is in your local directory)
+% \bibliography{name or your bibliography database}
+%
+% Non-BibTeX users please use
+%
+\begin{thebibliography}{}
+%
+% and use \bibitem to create references.
+%
+\bibitem{RefJ}
+% Format for Journal Reference
+Journal Author, Journal \textbf{Volume}, page numbers (year)
+% Format for books
+\bibitem{RefB}
+Book Author, \textit{Book title} (Publisher, place, year) page numbers
+% etc
+\end{thebibliography}
+
+\end{document}
+
+% end of file template.tex
