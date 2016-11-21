@@ -42,67 +42,64 @@
 
 \author{\firstname{Krishna} \lastname{Kumar}\inst{1}\fnsep\thanks{\email{kks32@cam.ac.uk}} \and
         \firstname{Kenichi} \lastname{Soga}\inst{2}\fnsep\thanks{\email{soga@berkeley.edu}} \and
-        \firstname{Jean-Yves} \lastname{Delenne}\inst{3}\fnsep\thanks{\email{}} \and
-        \firstname{Farhang} \lastname{Radjai}\inst{4}\fnsep\thanks{\email{}}
-        % etc.
+        \firstname{Jean-Yves} \lastname{Delenne}\inst{3}\fnsep\thanks{\email{}}
 }
 
 \institute{Department of Engineering, University of Cambridge, UK 
 \and
-           University of California, Berkeley, US
+           University of California, Berkeley, USA
 \and
            INRA, France
-\and 
-           CNRS, France
-          }
+}
 
 \abstract{%
-  Avalanches, landslides, and debris flows are geophysical hazards, which involve rapid mass movement
-  of granular solids, water, and air as a single phase system. In order to describe the mechanism of
-  immersed granular flows, it is important to consider both the dynamics of the solid phase and the
-  role of the ambient fluid~\cite{Denlinger2001}. The dynamics of the solid phase alone are
-  insufficient to describe the mechanism of granular flows in fluid. It is important to consider the
-  effect of hydrodynamic forces that reduce the weight of the solids inducing a transition from
-  dense-compacted to dense-suspended flows, and the drag interactions which counteract the movement
-  of the solids~\cite{Meruane2010}. Transient regimes characterised by a change in the solid
-  fraction, dilation at the onset of flow and the development of excess pore-pressure, result in
-  altering the balance between the stress carried by the fluid and that carried by the grains, thereby
-  changing the overall behaviour of the flow. In the present study, a two-dimensional coupled Lattice
-  Boltzmann LBM – DEM technique is developed to understand the micro-scale rheology of granular
-  flows in fluid.
-
-  In the present study, the collapse of a granular column in fluid is studied using 2D LBM - DEM.
-  The effect of initial aspect ratio on the run-out behaviour is investigated. The flow kinematics are
-  compared with the dry and buoyant granular collapse to understand the influence of hydrodynamic
-  forces and lubrication on the run-out. In the case of tall columns, the amount of material
-  destabilised above the failure plane is larger than that of short columns. Hence in tall columns,
-  the surface area of the mobilised mass that interacts with the surrounding fluid is significantly
-  higher than the short columns. This increase in the area of soil - fluid interaction results in an
-  increase in the formation of turbulent vortices that alter the deposit morphology during the
-  collapse. It is observed that the vortices result in formation of heaps that significantly affect
-  the distribution of mass in the flow.~\cite{Staron2007a} observed that the distribution of mass in
-  a granular flow plays a crucial role in the flow kinematics. In order to understand the behaviour
-  of tall columns, the run-out behaviour of a dense granular column with an initial aspect ratio of
-  6 is studied. The collapse of a tall granular column on slopes of 0, 2.5, 5 and 7.5 are studied.
-  The permeability of the granular mass was varied to understand the effect of permeability on the
-  run-out behaviour. }
+  Avalanches, landslides, and debris flows are geophysical hazards, involve
+  rapid mass movement of granular solids, water, and air as a multi-phase
+  system. In order to describe the mechanism of immersed granular flows,
+  it is important to consider both the dynamics of the solid phase and the
+  role of the ambient fluid~\cite{Denlinger2001}. In the present study,
+  the collapse of a granular column in fluid is
+  studied using 2D LBM - DEM. The flow kinematics are compared with the dry
+  and buoyant granular collapse to understand the influence of hydrodynamic
+  forces and lubrication on the run-out. In the case of tall columns,
+  the amount of material destabilised above the failure plane is larger than
+  that of short columns. Hence in tall columns, the surface area of the
+  mobilised mass that interacts with the surrounding fluid is significantly
+  higher than the short columns. This increase in the area of soil - fluid
+  interaction results in an increase in the formation of turbulent vortices
+  that alter the deposit morphology during the collapse. It is observed that
+  the vortices result in the formation of heaps that significantly affect
+  the distribution of mass in the flow. In order to understand the behaviour
+  of tall columns, the run-out behaviour
+  of a dense granular column with an initial aspect ratio of 6 is studied.
+  The collapse of a tall granular column on slopes of 0, 2.5, 5 and 7.5
+  are studied.}
 %
 \maketitle
 %
-\section{Introduction}
+\section{Collapse of granular columns}
 The collapse of a granular column on a horizontal surface is a simple case
 of granular flow, however a proper model that describes the flow dynamics
 is still lacking. Experimental investigations have shown that the flow
 duration, the spreading velocity, the final extent of the deposit, and the
 energy dissipation can be scaled in a quantitative way independent of
 substrate properties, grain size, density, and shape of the granular
-material and released mass~\cite{Lajeunesse2005, Lube2005}. Simple
-mathematical models based on conservation of horizontal momentum capture
-the scaling laws of the final deposit, but fail to describe the initial
-transition regime. Granular flow is modelled as a frictional dissipation
+material and released mass~\cite{Staron2007a, Lajeunesse2005, Lube2005}. 
+
+Granular collapse on a horizontal plane exhibit two distinct flow regimes:
+(a) for columns with aspect ratio ‘a’ <1.7 a linear relation between the
+spread and aspect ratio can be observed, and (b) for ‘a’ > 1.7 a power-law
+relationship exists.~\citet{Soundararajan2015} observed that a simple
+frictional dissipation model is able to capture the flow dynamics for
+columns with small aspect ratios. However, for tall columns the flow
+dyanmics of is controlled by the initial collisional regime, resulting in a
+power-law relationship with the aspect ratios. Simple mathematical models
+based on conservation of horizontal momentum capture the scaling laws of
+the final deposit, but fail to describe the initial transition regime
+~\citep{Kumar2013}. Granular flow is modelled as a frictional dissipation
 process in continuum mechanics but the lack of influence of inter-particle
-friction on the energy dissipation and spreading dynamics~\cite{Lube2005}
-is surprising.
+collision and friction on the energy dissipation and spreading dynamics is
+surprising.
 
 \section{Tall columns}
 
