@@ -84,14 +84,15 @@ is still lacking. Experimental investigations have shown that the flow
 duration, the spreading velocity, the final extent of the deposit, and the
 energy dissipation can be scaled in a quantitative way independent of
 substrate properties, grain size, density, and shape of the granular
-material and released mass~\cite{Staron2007a, Lajeunesse2005, Lube2005}. 
+material and released mass
+~\cite{Topin2011, Staron2007a, Lajeunesse2005, Lube2005}. 
 
 Granular collapse on a horizontal plane exhibit two distinct flow regimes:
-(a) for columns with aspect ratio ‘a’ <1.7 a linear relation between the
+(a) for columns with aspect ratio ‘a’ < 1.7 a linear relation between the
 spread and aspect ratio can be observed, and (b) for ‘a’ > 1.7 a power-law
-relationship exists.~\citet{Soundararajan2015} observed that a simple
-frictional dissipation model is able to capture the flow dynamics for
-columns with small aspect ratios. However, for tall columns the flow
+relationship exists. A simple frictional dissipation model is able to
+capture the flow dynamics for columns with small aspect ratios
+~\cite{soundararajan2015}. However, for tall columns the flow
 dyanmics of is controlled by the initial collisional regime, resulting in a
 power-law relationship with the aspect ratios. Simple mathematical models
 based on conservation of horizontal momentum capture the scaling laws of
@@ -101,24 +102,87 @@ process in continuum mechanics but the lack of influence of inter-particle
 collision and friction on the energy dissipation and spreading dynamics is
 surprising.
 
-\section{Tall columns}
-
-In the case of tall columns, the amount of material destabilised above the 
-failure plane is larger than that of short columns. Hence in tall columns, 
-the surface area of the mobilised mass that interacts with the 
-surrounding fluid is significantly higher than the short columns. This 
-increase in the area of soil - fluid interaction results in an increase
+The amount of material destabilised above the failure plane, in tall columns,
+is larger than that of short columns. This increase in the mobilised mass
+results in a signficant increase in the surface area of granular mass that
+interacts with the surrounding fluid. The increase in the area of soil -
+fluid interaction results in an increase
 in the formation of turbulent vortices that alter the deposit morphology during 
 the collapse. It is observed that the vortices result in formation of heaps 
 that significantly affect the distribution of mass in the flow.
-~\citet{Staron2007a} observed that the 
-distribution of mass in a granular flow plays a crucial role in the flow 
-kinematics. In order to understand the behaviour of tall columns, the run-out 
-behaviour of a dense granular column with an initial aspect ratio of 6 is 
-studied. The collapse of a tall granular column on slopes of 0\si{\degree}, 
-2.5\si{\degree}, 5\si{\degree} and 7.5\si{\degree} are studied. A hydrodynamic 
-radius of \textit{r} = 0.85 \textit{R} is adopted. 
+The distribution of mass in a granular flow plays a crucial role in the
+flow kinematics~\cite{Staron2007a}. In order to understand the
+behaviour of tall columns, the run-out behaviour of a dense granular column
+with an initial aspect ratio of 6 is studied using Lattice Boltzmann - Discrete
+Element Method coupling.
 
+\section{LBM-DEM coupling}
+The Lattice Boltzmann Method (LBM) is an alternative approach to
+the classical Navier-Stokes solvers for fluid flow and works on an
+equidistant grid of cells, called lattice cells, which interact only with
+their direct neighbours~\cite{He1997}. The fluid domain is divided into
+a rectangular grid or lattice, with the same spacing ‘h’ in both the x-
+and the y-directions. The present study focuses on 2-D problems; hence,
+the D2Q9 momentum discretization is adopted, where the fluid particles at
+each node are allowed to move to their eight immediate neighbours
+with eight different velocities $\mathit{e_i} (\mathit{i}=1\,,\dots\,,8)$.
+The primary variables in LB formulation are called the \textit{fluid 
+density distribution functions}, $\mathit{f_i}$, each representing the probable 
+amount of fluid particles moving with the velocity $\mathit{e_i}$ along the 
+direction $\mathit{i}$ at each node. In the present study, Lattice-Boltzmann
+- Multiple Relaxation Time (LBM-MRT) is used for numerical stability.
+The nine eigen values of $\mathbf{S}$ are all between 0 and 2 so as to
+maintain linear stability and the separation of scales. In  this  study,
+the Large Eddy Simulation (LES) is adopted to solve for turbulent flow
+problems. The separation of scales is achieved by filtering of the
+Navier-Stokes equations, from which the resolved scales are directly
+obtained and unresolved scales are modelled by a one-parameter
+Smagorinski sub-grid methodology~\cite{Smagorinsky1963}. 
+
+Lattice Boltzmann approach can accommodate large grain sizes and the
+interaction between the fluid and the moving grains can be modelled
+through relatively simple fluid – grain interface treatments. Further,
+employing the Discrete Element Method (DEM) to account for the
+grain – grain interaction naturally leads to a combined LB – DEM
+procedure~\cite{Kumar2012}. The Eulerian nature of the LBM formulation,
+together with the common explicit time step scheme of both LBM and DEM
+makes this coupling strategy an efficient numerical procedure for the
+simulation of grain – fluid systems. A no-slip boundary condition is
+used to simulate grain – fluid and grain – grain interactions. The
+solid grains inside the fluid are represented by lattice
+nodes. The discrete nature of lattice, results in a stepwise
+representation of the surfaces, which are circular, hence
+sufficiently small lattice spacing is adopted. In order to model flow
+through interconnected pore space, a reduction in radius (The
+hydrodynamic radius \textit{r}) is assumed during the
+LBM computation~\citep{soundararajan2015}.
+
+\section{Numerical set-up}
+In this study, a 2D poly-disperse system ($d_{max} / d_{min} = 1.8$) of
+circular discs in fluid was used to understand the behaviour of granular
+flows on slopes (see~\cref{fig:geometry}.
+The soil column was modelled using 2500 discs of density
+2650~\si{\kilogram\per\meter\cubed} and a contact friction angle of
+26\si{\degree}.  The  collapse of the column was simulated inside a fluid
+with a density of 1000~\si{\kilogram\per\meter\cubed} and a kinematic viscosity
+of $1 \times 10^{-6}$~\si{\meter\squared\per\second}. The fluid was modelled
+with 5 to 9 million LB nodes. GPU computing was used to simulate the problem.
+The choice of a 2D geometry has the advantage of cheaper computational
+effort than a 3D case, makeing it feasible to simulate very large systems.
+A granular column of aspect ratio `\textit{a}' of 6 was used. A hydrodynamic
+radius of \textit{r} = 0.85 \textit{R} is adopted. Dry analyses were also
+performed to study the effect of hydrodynamic forces on the run-out distance.
+The collapse of a tall granular column on slopes of 0\si{\degree},
+2.5\si{\degree}, 5\si{\degree} and 7.5\si{\degree} are studied.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.95\linewidth]{figs/geometry}
+  \caption{Underwater granular collapse set-up}
+  \label{fig:geometry}
+\end{figure}
+
+\section{Collapse on a horizontal plane}
 Snapshots of the collapse of an aspect ratio 6 column in fluid on a horizontal 
 surface are shown in~\cref{fig:LBM_DEM_a6}. The initial stage of collapse is 
 characterised by the free-fall of grains above the failure surface. Unlike the 
@@ -147,6 +211,7 @@ horizontal surface.}
 \end{figure}
 
 
+\section{Collapse on slopes}
 Snapshots of the collapse of a granular column (\textit{a} = 6) on a inclined 
 plane at angle of 5\si{\degree} are shown in~\cref{fig:a6_slope_snapshots}. 
 The collapse on a slope of 5\si{\degree} show flow evolution behaviour similar 
@@ -165,51 +230,9 @@ away from the flowing surface, the mass present in the heap gets redistributed
 (as seen at $t = 8\tau_c$). This behaviour is significantly different from that 
 observed in the case of short columns. 
 
-\begin{figure}
-\makebox[\linewidth][c]{
-\begin{subfigure}[b]{0.95\linewidth}
-	\centering
-    \includegraphics[width=0.95\linewidth]{figs/a6/a6slope5t_0}
-    \caption*{$t = 0\tau_c$}
-    \label{fig:a6slope5t_0}
-\end{subfigure}
-}\\
-
-\makebox[\linewidth][c]{
-\begin{subfigure}[b]{0.95\linewidth}
-	\centering
-    \includegraphics[width=0.95\linewidth]{figs/a6/a6slope5t_1tc}
-    \caption*{$t = 1\tau_c$}
-    \label{fig:a6slope5t_1tc}
-\end{subfigure}
-}\\
-
-\makebox[\linewidth][c]{
-\begin{subfigure}[b]{0.95\linewidth}
-	\centering
-    \includegraphics[width=0.95\linewidth]{figs/a6/a6slope5t_3tc}
-    \caption*{$t = 3\tau_c$}
-    \label{fig:a6slope5t_3tc}
-\end{subfigure}
-}\\
-
-\makebox[\linewidth][c]{
-\begin{subfigure}[b]{0.95\linewidth}
-	\centering
-    \includegraphics[width=0.95\linewidth]{figs/a6/a6slope5t_6tc}
-    \caption*{$t = 6\tau_c$}
-    \label{fig:a6slope5t_6tc}
-\end{subfigure}
-}\\
-
-\makebox[\linewidth][c]{
-\begin{subfigure}[b]{0.95\linewidth}
-	\centering
-    \includegraphics[width=0.95\linewidth]{figs/a6/a6slope5t_8tc}
-    \caption*{$t = 8\tau_c$}
-    \label{fig:a6slope5t_8tc}
-\end{subfigure}
-}
+\begin{figure}[htpb]
+\centering
+\includegraphics[width=0.9\linewidth]{figs/lbm_dem_a6_slope5}
 \caption[Flow evolution of a granular column collapse in fluid (a = 6) on a 
 slope of 5\si{\degree}]{Flow evolution of a granular column collapse in fluid 
 (a = 6) on a slope of 5\si{\degree}. Shows the velocity profile of fluid due to 
@@ -218,12 +241,11 @@ interaction with the grains (red - higher velocity).}
 \end{figure}
 
 
-
 \begin{figure}
 \makebox[\linewidth][c]{
 \begin{subfigure}[b]{0.95\linewidth}
 	\centering
-    \includegraphics[width=0.95\linewidth]{figs/a6/a6_slope5_6tc}
+    \includegraphics[width=0.95\linewidth]{figs/a6_slope5_6tc}
     \caption*{$t = 6\tau_c$}
     \label{fig:a6_slope5_6tc}
 \end{subfigure}
@@ -231,7 +253,7 @@ interaction with the grains (red - higher velocity).}
 \makebox[\linewidth][c]{
 \begin{subfigure}[b]{0.95\linewidth}
 	\centering
-    \includegraphics[width=0.95\linewidth]{figs/a6/a6_slope5_8tc}
+    \includegraphics[width=0.95\linewidth]{figs/a6_slope5_8tc}
     \caption*{$t = 8\tau_c$}
     \label{fig:a6_slope5_8tc}
 \end{subfigure}
@@ -335,6 +357,7 @@ column collapse in fluid (a = 6).}
 \label{fig:a6_KExy}
 \end{figure}
 
+\section{Summary}
 The behaviour of tall columns is significantly different from that observed in 
 the case of short columns. The slope angle has a strong influence on the number 
 and size of eddies during the flow. The eddies interact with the surface of the 
