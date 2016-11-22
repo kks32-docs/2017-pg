@@ -57,7 +57,7 @@
   rapid mass movement of granular solids, water, and air as a multi-phase
   system. In order to describe the mechanism of immersed granular flows,
   it is important to consider both the dynamics of the solid phase and the
-  role of the ambient fluid~\cite{Denlinger2001}. In the present study,
+  role of the ambient fluid. In the present study,
   the collapse of a granular column in fluid is
   studied using 2D LBM - DEM. The flow kinematics are compared with the dry
   and buoyant granular collapse to understand the influence of hydrodynamic
@@ -97,7 +97,7 @@ dyanmics of is controlled by the initial collisional regime, resulting in a
 power-law relationship with the aspect ratios. Simple mathematical models
 based on conservation of horizontal momentum capture the scaling laws of
 the final deposit, but fail to describe the initial transition regime
-~\citep{Kumar2013}. Granular flow is modelled as a frictional dissipation
+~\citep{Kumar2012}. Granular flow is modelled as a frictional dissipation
 process in continuum mechanics but the lack of influence of inter-particle
 collision and friction on the energy dissipation and spreading dynamics is
 surprising.
@@ -137,7 +137,7 @@ the Large Eddy Simulation (LES) is adopted to solve for turbulent flow
 problems. The separation of scales is achieved by filtering of the
 Navier-Stokes equations, from which the resolved scales are directly
 obtained and unresolved scales are modelled by a one-parameter
-Smagorinski sub-grid methodology~\cite{Smagorinsky1963}. 
+Smagorinski sub-grid methodology.%~\cite{Smagorinsky1963}. 
 
 Lattice Boltzmann approach can accommodate large grain sizes and the
 interaction between the fluid and the moving grains can be modelled
@@ -185,22 +185,14 @@ The collapse of a tall granular column on slopes of 0\si{\degree},
 \section{Collapse on a horizontal plane}
 Snapshots of the collapse of an aspect ratio 6 column in fluid on a horizontal 
 surface are shown in~\cref{fig:LBM_DEM_a6}. The initial stage of collapse is 
-characterised by the free-fall of grains above the failure surface. Unlike the 
-dry condition, as the grains undergo free-fall due to gravity, they interact 
+characterised by the free-fall of grains above the failure surface.
+The height of the static region, which is below the shear-failure surface,
+is shorter than the total height of the column. As the grains experience
+free-fall they interact with the surrounding fluid. Unlike the dry condition,
+as the grains undergo free-fall due to gravity, they interact 
 with the surrounding fluid experiencing drag forces. This results in a 
-significant drop in the kinetic energy available for the flow. As the grains 
-reach the static region, they interact with the neighbouring grains and the 
-kinetic energy gained during the free fall is converted into horizontal 
-acceleration. Uniquely during this stage ($t = 3\tau_c$) the interactions 
-between the soil grains on the surface with the surrounding fluid result in the 
-formation of eddies. The number of eddies formed during the flow is 
-proportional to the surface area of the granular mass interacting with the 
-fluid. Hydroplaning can be observed at the flow front ($t = 3\tau_c$). Two 
-large vortices with almost the same size can be observed at the final stage of 
-collapse. The soil grains on the surface experience suction due to formation of 
-eddies and this results in formation of heaps of granular mass in front of each 
-vortex. The formation of heaps, although in evidence, doesn't significantly 
-affect the distribution of mass in the case of collapse on a horizontal plane. 
+significant drop in the kinetic energy available for the flow.
+However, no vortices are observed during the initial stage of collapse.
 
 \begin{figure}[htpb]
 \centering
@@ -210,6 +202,28 @@ horizontal surface.}
 \label{fig:LBM_DEM_a6}
 \end{figure}
 
+As the grains reach the static region, they interact with the neighbouring
+grains and the kinetic energy gained during the free fall is converted into
+horizontal acceleration. Uniquely during this stage ($t = 3\tau_c$) the
+interactions between the soil grains on the surface with the surrounding
+fluid result in the formation of eddies. The number of eddies formed during
+the flow is proportional to the surface area of the granular mass interacting
+with the fluid. Hydroplaning can be observed at the flow front ($t = 3\tau_c$).
+Two large vortices with almost the same size can be observed at the final stage of 
+collapse. The soil grains on the surface experience suction due to formation of 
+eddies and this results in formation of heaps of granular mass in front of each 
+vortex. Unlike short columns, these vortices have 
+a significant influence on the mass distribution along the run-out. Heaps of 
+granular material can be observed in front of each vortex. The number of 
+vortices formed during a collapse is found to be proportional to the amount of 
+material destabilised, i.e., the length of free-surface interacting with the 
+fluid influences the number of vortices generated during the collapse. The 
+reappearance of force chains at $t = 6\tau_c$ indicates the 
+granular mass is consolidating resulting in an increase in the shear strength. 
+The formation of heaps, although in evidence, doesn't significantly 
+affect the distribution of mass in the case of collapse on a horizontal plane. 
+
+
 
 \section{Collapse on slopes}
 Snapshots of the collapse of a granular column (\textit{a} = 6) on a inclined 
@@ -217,20 +231,12 @@ plane at angle of 5\si{\degree} are shown in~\cref{fig:a6_slope_snapshots}.
 The collapse on a slope of 5\si{\degree} show flow evolution behaviour similar 
 to the case of collapse on a horizontal plane. The vortices are formed only 
 during the horizontal spreading stage $t = 3\tau_c$, but the number of vortices 
-formed during the collapse is higher than the collapse on a horizontal plane. 
+formed during the collapse is more than the collapse on a horizontal plane. 
 However, as the flow progresses a single large vortex engulfs other smaller 
 vortices, thus having a significant influence on the mass 
-distribution.~\Cref{fig:a6_slope_voro} shows 
-the distribution of mass and the packing density at $t = 6\tau_c$ and $t = 
-8\tau_c$. A heap can be observed in front of the large vortex almost at the 
-middle of the flow. The height of the heap formed in the middle of the granular 
-flow is higher than the collapse height next to the wall. However, when the 
-flow comes to rest and the vortex moves 
-away from the flowing surface, the mass present in the heap gets redistributed 
-(as seen at $t = 8\tau_c$). This behaviour is significantly different from that 
-observed in the case of short columns. 
+distribution.
 
-\begin{figure}[htpb]
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.9\linewidth]{figs/lbm_dem_a6_slope5}
 \caption[Flow evolution of a granular column collapse in fluid (a = 6) on a 
@@ -240,6 +246,16 @@ interaction with the grains (red - higher velocity).}
 \label{fig:a6_slope_snapshots}
 \end{figure}
 
+~\Cref{fig:a6_slope_voro} shows 
+the distribution of mass and the packing density at $t = 6\tau_c$ and
+$t = 8\tau_c$. A heap can be observed in front of the large vortex almost at the 
+middle of the flow. The height of the heap formed in the middle of the granular 
+flow is higher than the collapse height next to the wall. However, when the 
+flow comes to rest and the vortex moves 
+away from the flowing surface, the mass present in the heap gets redistributed 
+(as seen at $t = 8\tau_c$). This behaviour is significantly different from that 
+observed in the case of short columns. More denser packing can be observed in front
+of the eddies, resulting in spectrums dense - loose regions.
 
 \begin{figure}
 \makebox[\linewidth][c]{
@@ -263,7 +279,7 @@ slope of 5\si{\degree}.}
 \label{fig:a6_slope_voro}
 \end{figure}
 
-
+\subsection{Effect of slope angle}
 In order to understand the influence of slope angles on the run-out behaviour, 
 the collapse of a granular column with an initial aspect ratio of 6 is 
 performed on slopes of 0\si{\degree}, 2.5\si{\degree}, 5\si{\degree} and 
@@ -283,71 +299,73 @@ amount of material destabilised in fluid is less than the dry conditions due to
 the drag forces experienced by the grains, which retards the quantity and the 
 rate of collapse.
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
-\begin{subfigure}[b]{0.9\linewidth}
 \includegraphics[width=0.9\linewidth]{figs/runout_a6_slope}
 \caption{Evolution of run-out for a column collapse in fluid (a = 6).}
 \label{fig:Runout_a6_slope}
-\end{subfigure}\\
-\begin{subfigure}[b]{0.9\linewidth}
-\centering
-\includegraphics[width=0.9\linewidth]{figs/height_a6_slope}
-\caption{Evolution of height with time for a column collapse in fluid (a = 6).}
-\label{fig:Height_a6_slope}
-\end{subfigure}
-\caption{Evolution of  run-out and height  for a column collapse in fluid (a = 
-6).}
-\label{fig:a6_slope}
 \end{figure}
 
-\Cref{fig:KE_a6_slope} shows the evolution of the normalised kinetic energy 
-for a granular column (a = 6) collapse in fluid on different slope angles. The 
-amount of kinetic energy available for the flow in the submerged condition 
-is almost half that of the dry condition. It can be seen from the figure that 
-the vertical kinetic energy in the fluid condition dissipates a longer 
-duration, in contrast to the free-fall release observed in the dry condition. 
-The slower dissipation is attributed to the viscous drag force experienced by 
-the grains.
-
-\begin{figure}
+\begin{figure}[htbp]
 \centering
-\makebox[\linewidth][c]{
-\begin{subfigure}[b]{0.95\linewidth}
-  \centering
-  \includegraphics[width=\linewidth]{figs/KEx_a6_slope}
-  \caption{Evolution of the horizontal kinetic energy.}
-  \label{fig:KEx_a6_slope}
-\end{subfigure}
-}\\
-\makebox[\linewidth][c]{
-\begin{subfigure}[t]{0.95\linewidth}
-  \centering
-  \includegraphics[width=\linewidth]{figs/KEy_a6_slope}
-  \caption{Evolution of the vertical kinetic energy.}
-  \label{fig:KEy_a6_slope}
-\end{subfigure}
-}
-\caption{Evolution of the kinetic energies with time for a granular 
+\includegraphics[width=0.8\linewidth]{figs/height_a6_slope}
+\caption{Evolution of height with time for a column collapse in fluid (a = 6).}
+\label{fig:Height_a6_slope}
+\end{figure}
+
+\Cref{fig:KEx_a6_slope,fig:KEy_a6_slope} shows the evolution of the normalised
+kinetic energies on different slope angles. The 
+amount of kinetic energy available for the flow in the submerged condition 
+is almost half that of the dry condition.
+
+\Cref{fig:KEx_a6_slope} shows that in the dry condition, the kinetic energy
+available for the flow increases proportionally with the slope angle. However,
+in the case of submerged flow slopes 0\si{\degree} and 2\si{\degree},
+and 5\si{\degree} and 7.5\si{\degree} have similar kinetic energy evolution.
+The longer tail observed in the submerged granular collapse can be attributed to
+the formation and migration of eddies and subsequent mass redistribution into heaps.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\linewidth]{figs/KEx_a6_slope}
+\caption{Evolution of horizontal kinetic energy with time for a granular 
 column collapse in fluid (a = 6).}
-\label{fig:a6_KExy}
+\label{fig:KEx_a6_slope}
+\end{figure}
+
+\Cref{fig:KEx_a6_slope} shows that 
+the vertical kinetic energy in the fluid condition dissipates slower, in
+comparison to the free-fall release observed in the dry condition. The slower
+dissipation is attributed to the viscous drag force experienced by the grains. 
+However, the slope angle has negligble effect on the evolution of vertical
+kinetic energy in submerged condition. Where as, dry conditions show 
+$\approx15\%$ increase in the peak vertical kinetic energy when the slope angle
+changes from 0\si{\degree} to 7.5\si{\degree}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\linewidth]{figs/KEy_a6_slope}
+\caption{Evolution of vertical kinetic energy with time for a granular 
+column collapse in fluid (a = 6).}
+\label{fig:KEy_a6_slope}
 \end{figure}
 
 \section{Summary}
 The behaviour of tall columns is significantly different from that observed in 
-the case of short columns. The slope angle has a strong influence on the number 
+short columns. The slope angle has a strong influence on the number 
 and size of eddies during the flow. The eddies interact with the surface of the 
 granular flow and forms heaps in front of each vortex. This significantly 
 affects the mass distribution and in turn the run-out evolution. Although tall 
-cliffs are quite rare in submarine condition in comparison to short cliffs or 
-slopes, further research is required to understand the influence of 
-permeability and packing density on the run-out evolution of tall columns. 
+cliffs are quite rare in submarine condition, further research is
+required to understand the influence of permeability and packing density
+on the run-out behaviour.
+
 
 
 
 \section*{Acknowledgements}
-The author would like to thank the Cambridge Commonwealth and Overseas Trust for the financial support to the
-first author to pursue this research.
+The author would like to thank the Cambridge Commonwealth and Overseas Trust
+for the financial support to pursue this research.
 
 %
 % BibTeX or Biber users please use (the style is already called in the class, ensure 
